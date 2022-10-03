@@ -12,12 +12,12 @@ TYPE="deb"
 NAME="numigi-meta"
 URL="https://github.com/Lanhild/numigi-meta"
 
-fpm -s empty -t $TYPE -n $NAME\
-	-a all\
-	-v $1\
+fpm -s empty -t $TYPE -p $NAME-$1-any.deb \
+	--name $NAME \
+	--license $LICENSE \
+	--version $1 \
+	--architecture all \
+	--depends grub-theme-numigi \
 	--description "Numigi metapackage used to install a group of packages present in the main repository"\
-	--license $LICENSE\
-	--maintainer $MAINTAINER\
-	--url $URL\
-	-d grub-theme-numigi
-
+	--url "$URL" \
+	--maintainer "$MAINTAINER"
