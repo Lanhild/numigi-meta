@@ -18,6 +18,14 @@ fpm -s empty -t $TYPE -p $NAME-$1-any.deb \
 	--version $1 \
 	--architecture all \
 	--depends grub-theme-numigi \
+	--depends libreoffice \
+	--depends flameshot \
+	--depends kazam \
+	--depends gimp \
+	--depends vlc \
+	--depends deja-dup \
+	--depends peek \
+	--depends firefox \
 	--description "Numigi metapackage used to install a group of packages present in the main repository"\
 	--url "$URL" \
 	--maintainer "$MAINTAINER"
