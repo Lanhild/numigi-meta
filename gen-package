@@ -73,7 +73,6 @@ fpm -s dir -t deb -p "$NAME"-"$VERSION"-any."$TYPE" \
 	--depends deja-dup \
 	--depends peek \
 	--depends firefox \
-	# numigi-ppa specific dependencies
 	--depends grub-theme-numigi \
 	--depends numigi-brave \
   --depends numigi-albert \
