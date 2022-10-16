@@ -1,0 +1,25 @@
+#!/bin/bash
+# Install applications that are not directly present in the main software repositories
+# Fetch the source from the upstream repo and download it on the user machine
+set -euo pipefail
+IFS=$'\n\t'
+
+# Change to temporary directory
+cd $(mktemp -d)
+
+# Install google-chrome-stable web browser
+echo 'Fetching upstream source...'
+sudo curl -o google-chrome-stable_current_amd64.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+echo 'Installing the package on the system...'
+sudo apt install -y ./google-chrome-stable_current_amd64.deb
+
+# Install bitwarden snap
+echo 'Installing bitwarden password manager...' 
+sudo snap install bitwarden
+
+echo 'Updating local sources...'
+sudo apt update
+
+echo 'All jobs done!'
+exit 0
