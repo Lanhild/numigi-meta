@@ -14,6 +14,32 @@ sudo curl -o google-chrome-stable_current_amd64.deb https://dl.google.com/linux/
 echo 'Installing the package on the system...'
 sudo apt install -y ./google-chrome-stable_current_amd64.deb
 
+echo 'Installing build dependencies...'
+echo 'Adding upstream source to local sources...'
+echo 'deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_22.04/ /' | sudo tee /etc/apt/sources.list.d/home:manuelschneid3r.list
+
+echo 'Adding upstream gpg key to local keyring for trust...'
+curl -fsSL https://download.opensuse.org/repositories/home:manuelschneid3r/xUbuntu_22.04/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_manuelschneid3r.gpg > /dev/null
+
+echo 'Updating sources...' 
+sudo apt update
+
+echo 'Installing the binary...'
+sudo apt install albert
+
+echo 'Installing build dependencies...'
+echo 'Adding trusted signed key...'
+sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+
+echo 'Adding upstream source to local sources...'
+echo 'deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list'
+
+echo 'Updating sources...' 
+sudo apt update
+
+echo 'Installing the binary...'
+sudo apt install brave-browser
+
 # Install bitwarden snap
 echo 'Installing bitwarden password manager...' 
 sudo snap install bitwarden
