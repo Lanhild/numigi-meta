@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # See https://github.com/Lanhild/ppa-maintainers
 # Template helper script used to generate packages using the fpm utility
 # See HELP for details
@@ -65,6 +65,7 @@ fpm -s dir -t deb -p "$NAME"-"$VERSION"-any."$TYPE" \
 	--license "$LICENSE" \
 	--version $VERSION \
 	--architecture all \
+  --depends numigi-hooks \
 	--depends libreoffice \
 	--depends flameshot \
 	--depends kazam \
@@ -73,6 +74,9 @@ fpm -s dir -t deb -p "$NAME"-"$VERSION"-any."$TYPE" \
 	--depends deja-dup \
 	--depends peek \
 	--depends firefox \
+  --depends google-chrome-stable \
+  --depends brave-browser \
+  --depends albert \
 	--description "$DESC" \
 	--url "$URL" \
 	--maintainer "$MAINTAINER" \
