@@ -75,7 +75,6 @@ fpm -s dir -t deb -p "$NAME"-"$VERSION"-any."$TYPE" \
 	--depends peek \
 	--depends firefox \
   --depends google-chrome-stable \
-  --depends brave-browser \
   --depends albert \
 	--description "$DESC" \
 	--url "$URL" \
