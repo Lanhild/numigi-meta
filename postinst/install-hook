@@ -7,5 +7,7 @@ IFS=$'\n\t'
 # Change to temporary directory
 cd $(mktemp -d)
 
+echo 'Installing applications...'
 echo 'All jobs done!'
+echo 'Please reboot your computer to complete the installation.'
 exit 0

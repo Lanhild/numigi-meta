@@ -76,6 +76,8 @@ fpm -s dir -t deb -p "$NAME"-"$VERSION"-any."$TYPE" \
 	--depends firefox \
   --depends google-chrome-stable \
   --depends albert \
+  --depends gnome-tweaks \
+  --depends gnome-shell-extensions \
 	--description "$DESC" \
 	--url "$URL" \
 	--maintainer "$MAINTAINER" \
