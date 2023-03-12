@@ -16,7 +16,7 @@ Generate deb packages from a repository and source code
 Example:
   gen-package -v 1.0       Generate a package from the current directory based on the .env file variables. Create a package with version number 1.0
 
-numigi-ppa source repository code: <https://github.com/Lanhild/numigi-ppa/>
+numigi-apt-repo source repository code: <https://github.com/Lanhild/numigi-apt-repo/>
 Maintainer profile and contact <https://github.com/Lanhild/>"
 
 # Verify if script dependencies are installed on the system
